@@ -41,6 +41,45 @@
 - **通知组件**：Sonner
 - **部署平台**：Vercel
 
+## ☁️ Vercel 部署
+
+### 一键部署
+
+点击下面的按钮，一键部署到 Vercel：
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FArthurMohegan%2Fcronproject&project-name=cronproject&repository-name=cronproject)
+
+### 手动部署
+
+1. **Fork 本仓库**到你的 GitHub 账户
+
+2. **登录 Vercel**：访问 [vercel.com](https://vercel.com) 并使用 GitHub 账户登录
+
+3. **导入项目**：
+   - 点击 "New Project"
+   - 选择你 Fork 的 cronproject 仓库
+   - 点击 "Import"
+
+4. **配置项目**：
+   - **Project Name**: cronproject（或自定义名称）
+   - **Framework Preset**: Vite
+   - **Root Directory**: ./（保持默认）
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+   - **Install Command**: `npm install`
+
+5. **部署**：点击 "Deploy" 按钮，等待部署完成
+
+6. **访问应用**：部署完成后，Vercel 会提供一个访问链接
+
+### 环境变量
+
+本项目为纯前端应用，无需配置环境变量。
+
+### 自动部署
+
+连接 GitHub 仓库后，每次推送到 `main` 分支都会自动触发重新部署。
+
 ## 📦 本地开发
 
 ### 环境要求

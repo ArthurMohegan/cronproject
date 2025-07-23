@@ -41,6 +41,45 @@ A clean and practical online tool website that provides two core functions for d
 - **Notification**: Sonner
 - **Deployment**: Vercel
 
+## ☁️ Vercel Deployment
+
+### One-Click Deploy
+
+Click the button below to deploy to Vercel with one click:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FArthurMohegan%2Fcronproject&project-name=cronproject&repository-name=cronproject)
+
+### Manual Deployment
+
+1. **Fork this repository** to your GitHub account
+
+2. **Login to Vercel**: Visit [vercel.com](https://vercel.com) and login with your GitHub account
+
+3. **Import Project**:
+   - Click "New Project"
+   - Select your forked cronproject repository
+   - Click "Import"
+
+4. **Configure Project**:
+   - **Project Name**: cronproject (or custom name)
+   - **Framework Preset**: Vite
+   - **Root Directory**: ./ (keep default)
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+   - **Install Command**: `npm install`
+
+5. **Deploy**: Click "Deploy" button and wait for deployment to complete
+
+6. **Access Application**: After deployment, Vercel will provide an access link
+
+### Environment Variables
+
+This project is a pure frontend application and requires no environment variables.
+
+### Automatic Deployment
+
+After connecting the GitHub repository, every push to the `main` branch will automatically trigger redeployment.
+
 ## 📦 Local Development
 
 ### Requirements

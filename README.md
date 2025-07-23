@@ -41,12 +41,27 @@
 - **通知组件**：Sonner
 - **部署平台**：Vercel
 
+## 🐳 Docker 部署
+
+支持使用 Docker 和 Docker Compose 进行容器化部署：
+
+```bash
+# 生产环境部署
+docker-compose up -d
+
+# 开发环境部署（支持热重载）
+docker-compose --profile dev up -d cronproject-dev
+```
+
+详细的 Docker 部署指南请参考：[DOCKER.md](DOCKER.md)
+
 ## 📦 本地开发
 
 ### 环境要求
 
 - Node.js >= 18.0.0
 - npm 或 pnpm
+- Docker（可选，用于容器化部署）
 
 ### 安装依赖
 

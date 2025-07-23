@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  # 生产环境服务
+  cronproject:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: cronproject-app
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - cronproject-network
+
+  # 开发环境服务（可选）
+  cronproject-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+      target: development
+    container_name: cronproject-dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    networks:
+      - cronproject-network
+    profiles:
+      - dev
+
+networks:
+  cronproject-network:
+    driver: bridge
+
+volumes:
+  node_modules:

@@ -41,12 +41,27 @@ A clean and practical online tool website that provides two core functions for d
 - **Notification**: Sonner
 - **Deployment**: Vercel
 
+## 🐳 Docker Deployment
+
+Supports containerized deployment using Docker and Docker Compose:
+
+```bash
+# Production deployment
+docker-compose up -d
+
+# Development deployment (with hot reload)
+docker-compose --profile dev up -d cronproject-dev
+```
+
+For detailed Docker deployment guide, please refer to: [DOCKER.md](DOCKER.md)
+
 ## 📦 Local Development
 
 ### Requirements
 
 - Node.js >= 18.0.0
 - npm or pnpm
+- Docker (optional, for containerized deployment)
 
 ### Install Dependencies
 

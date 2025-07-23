@@ -53,9 +53,9 @@ logs
 # 开发工具配置
 .eslintrc*
 .prettierrc*
-tailwind.config.js
-vite.config.ts
-tsconfig*.json
+# tailwind.config.js
+# vite.config.ts
+# tsconfig*.json
 
 # Docker 相关
 Dockerfile*

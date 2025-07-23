@@ -126,6 +126,36 @@ npm run preview
 pnpm preview
 ```
 
+## 🐳 Docker Deployment
+
+### Using Docker Hub Image (Recommended)
+
+Directly use the published Docker image without local building:
+
+```bash
+# One-click run
+docker run -d -p 3000:80 --name cronproject cybchyb/cronproject:latest
+```
+
+Visit http://localhost:3000 to use the application.
+
+- **Docker Hub**: https://hub.docker.com/r/cybchyb/cronproject
+- **Image Address**: `cybchyb/cronproject:latest`
+
+### Local Build Deployment
+
+Supports containerized deployment using Docker and Docker Compose:
+
+```bash
+# Production deployment
+docker-compose up -d
+
+# Development deployment (with hot reload)
+docker-compose --profile dev up -d cronproject-dev
+```
+
+For detailed Docker deployment guide, please refer to: [DOCKER.md](DOCKER.md)
+
 ## 📁 Project Structure
 
 ```

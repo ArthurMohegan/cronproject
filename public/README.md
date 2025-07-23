@@ -41,6 +41,36 @@
 - **通知组件**：Sonner
 - **部署平台**：Vercel
 
+## 🐳 Docker 部署
+
+### 使用 Docker Hub 镜像（推荐）
+
+直接使用已发布的 Docker 镜像，无需本地构建：
+
+```bash
+# 一键运行
+docker run -d -p 3000:80 --name cronproject cybchyb/cronproject:latest
+```
+
+访问 http://localhost:3000 即可使用应用。
+
+- **Docker Hub**: https://hub.docker.com/r/cybchyb/cronproject
+- **镜像地址**: `cybchyb/cronproject:latest`
+
+### 本地构建部署
+
+支持使用 Docker 和 Docker Compose 进行容器化部署：
+
+```bash
+# 生产环境部署
+docker-compose up -d
+
+# 开发环境部署（支持热重载）
+docker-compose --profile dev up -d cronproject-dev
+```
+
+详细的 Docker 部署指南请参考：[DOCKER.md](DOCKER.md)
+
 ## ☁️ Vercel 部署
 
 ### 一键部署

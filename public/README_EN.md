@@ -27,7 +27,7 @@ A clean and practical online tool website that provides two core functions for d
 
 ## 🚀 Live Demo
 
-- **Production**: [https://cronproject-77cfdu2j4-arthur-morgens-projects.vercel.app](https://cronproject-77cfdu2j4-arthur-morgens-projects.vercel.app)
+- **Production**: [https://cronproject.vercel.app/](https://cronproject.vercel.app/)
 - **Local Development**: http://localhost:5174/
 
 ## 🛠️ Tech Stack

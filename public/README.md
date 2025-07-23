@@ -27,7 +27,7 @@
 
 ## 🚀 在线体验
 
-- **生产环境**：[https://cronproject-77cfdu2j4-arthur-morgens-projects.vercel.app](https://cronproject-77cfdu2j4-arthur-morgens-projects.vercel.app)
+- **生产环境**：[https://cronproject.vercel.app/](https://cronproject.vercel.app/)
 - **本地开发**：http://localhost:5174/
 
 ## 🛠️ 技术栈

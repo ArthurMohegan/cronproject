@@ -1,5 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
-import { Clock, Code } from "lucide-react";
+import { Clock, Code, FileText } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+import LanguageSelector from "./LanguageSelector";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -7,6 +9,7 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   const isActive = (path: string) => {
     return location.pathname === path;
@@ -21,7 +24,7 @@ export default function Layout({ children }: LayoutProps) {
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-2 text-white font-bold text-xl">
                 <Code className="h-8 w-8" />
-                <span>开发工具箱</span>
+                <span>{t('nav.title')}</span>
               </Link>
             </div>
             <div className="flex items-center space-x-8">
@@ -33,7 +36,7 @@ export default function Layout({ children }: LayoutProps) {
                     : "text-blue-100 hover:bg-blue-500 hover:text-white"
                 }`}
               >
-                首页
+                {t('nav.home')}
               </Link>
               <Link
                 to="/cron"
@@ -44,7 +47,7 @@ export default function Layout({ children }: LayoutProps) {
                 }`}
               >
                 <Clock className="h-4 w-4" />
-                <span>Cron生成器</span>
+                <span>{t('nav.cron')}</span>
               </Link>
               <Link
                 to="/regex"
@@ -55,8 +58,23 @@ export default function Layout({ children }: LayoutProps) {
                 }`}
               >
                 <Code className="h-4 w-4" />
-                <span>正则生成器</span>
+                <span>{t('nav.regex')}</span>
               </Link>
+              <Link
+                to="/readme"
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors flex items-center space-x-1 ${
+                  isActive("/readme")
+                    ? "bg-blue-700 text-white"
+                    : "text-blue-100 hover:bg-blue-500 hover:text-white"
+                }`}
+              >
+                <FileText className="h-4 w-4" />
+                <span>{t('nav.readme')}</span>
+              </Link>
+              <LanguageSelector 
+                currentLanguage={language} 
+                onLanguageChange={setLanguage} 
+              />
             </div>
           </div>
         </div>

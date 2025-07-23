@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-import { Clock, Code, ArrowRight, Zap, Users, Shield } from "lucide-react";
+import { Clock, Code, ArrowRight, Zap, Users, Shield, FileText } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
+  
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
@@ -9,10 +12,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              开发者工具箱 🛠️
+              {t('home.title')} 🛠️
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-blue-100">
-              简洁实用的在线工具，为开发者和技术人员提供高效的表达式生成服务
+              {t('home.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -20,7 +23,7 @@ export default function Home() {
                 className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors flex items-center justify-center space-x-2"
               >
                 <Clock className="h-5 w-5" />
-                <span>Cron表达式生成器</span>
+                <span>{t('home.cron.title')}</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
@@ -28,7 +31,7 @@ export default function Home() {
                 className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors flex items-center justify-center space-x-2"
               >
                 <Code className="h-5 w-5" />
-                <span>正则表达式生成器</span>
+                <span>{t('home.regex.title')}</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -39,8 +42,8 @@ export default function Home() {
       {/* Features Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">核心功能</h2>
-          <p className="text-lg text-gray-600">专为开发者设计的实用工具集合</p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">{t('home.title')}</h2>
+          <p className="text-lg text-gray-600">{t('home.subtitle')}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -50,10 +53,10 @@ export default function Home() {
               <div className="bg-blue-100 p-3 rounded-lg">
                 <Clock className="h-8 w-8 text-blue-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 ml-4">Cron表达式生成器</h3>
+              <h3 className="text-2xl font-bold text-gray-900 ml-4">{t('home.cron.title')}</h3>
             </div>
             <p className="text-gray-600 mb-6">
-              通过可视化界面轻松生成cron表达式，支持常用模板和自定义设置，实时预览执行时间。
+              {t('home.cron.desc')}
             </p>
             <ul className="space-y-2 mb-6">
               <li className="flex items-center text-gray-600">
@@ -83,10 +86,10 @@ export default function Home() {
               <div className="bg-green-100 p-3 rounded-lg">
                 <Code className="h-8 w-8 text-green-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 ml-4">正则表达式生成器</h3>
+              <h3 className="text-2xl font-bold text-gray-900 ml-4">{t('home.regex.title')}</h3>
             </div>
             <p className="text-gray-600 mb-6">
-              提供常用正则表达式模板，支持自定义构建和实时测试验证，让正则表达式编写变得简单。
+              {t('home.regex.desc')}
             </p>
             <ul className="space-y-2 mb-6">
               <li className="flex items-center text-gray-600">
